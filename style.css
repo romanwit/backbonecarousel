@@ -1,0 +1,8 @@
+#my-carousel { padding: 15px; position:absolute; height:200px; width:200%;left:0px;}
+img {padding-top: 20px;}
+.carousel-item { position: relative; padding-left: 40px; padding-top: 10px; }
+.carousel-prev { position: relative; left: 20px;  }
+.carousel-next { position: relative; right: -20px; }
+.carousel-container {border:1px solid; display: none; position: relative; width:49%; height:90%; left: 5px; margin-top: 2px;
+    margin-right: 5px; float: left; text-align:left;}
+	

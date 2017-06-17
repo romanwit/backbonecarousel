@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>  
+    <div id="my-carousel">
+      
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+	<script type="text/template" id="carousel-template">
+		<button class='carousel-prev'>&laquo;</button>
+			<%_.each(AllImages.models, function(el) {%>
+			<span class='carousel-item'><img src='
+			<%=el.attributes.images[Math.floor(Math.random() * el.attributes.images.length)]%>
+			' width=100px></span><%}) %>
+		<button class='carousel-next'>&raquo;</button>
+	</script>
+	<script type="text/template" id="carousel-template1">
+		<%var i = 0%>
+					
+			<%_.each(AllImages.models, function(el) {%>						
+			<%if (i%4==0) {%>
+			<div id="con<%=i/4%>" class="carousel-container">
+			<%if (i!=0)	{%>
+			<button class='carousel-prev'>&laquo;</button><%}%>			
+			<%}%>
+			<span class='carousel-item'><img src='
+			<%=el.attributes.images[Math.floor(Math.random() * el.attributes.images.length)]%>
+			' width=100px></span>
+			<%if (((i+1)%4==0) && ((i+1)!=AllImages.models.length)) {%><button class='carousel-next'>&raquo;</button></div><%}%>
+			<%i++;%>
+			<%}) %>
+		
+	</script>
+    <script src="script.js"></script>
+  </body>
+</html>
